@@ -1,0 +1,20 @@
+{
+  "transactions": [
+    {
+      "id": 1,
+      "description": "Desenvolvimento de site",
+      "type": "entrada",
+      "category": "Vendas",
+      "price": 500,
+      "createdAt": "2022-12-06T01:34:33.563Z"
+    },
+    {
+      "id": 2,
+      "description": "Lanche",
+      "type": "saida",
+      "category": "Lazer",
+      "price": 112,
+      "createdAt": "2022-12-05T01:34:33.563Z"
+    }
+  ]
+}
