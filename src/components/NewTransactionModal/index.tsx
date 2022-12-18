@@ -4,6 +4,8 @@ import { CloseButton, Content, Overlay, TransactionType, TransactionTypeButton }
 import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Controller, useForm } from 'react-hook-form';
+import { TransactionsContext } from '../../contexts/TransactionsContext';
+import { useContext } from 'react';
 
 const newTransactionFormSchena = z.object({
   description: z.string(),
@@ -15,15 +17,19 @@ const newTransactionFormSchena = z.object({
 type NewTransactionFormInputs = z.infer<typeof newTransactionFormSchena>
 
 export function NewTransactionModal() {
-  const { control, register, handleSubmit, formState: { isSubmitting } } = useForm<NewTransactionFormInputs>({
+  const { createTransaction } = useContext(TransactionsContext)
+
+  const { control, register, handleSubmit, formState: { isSubmitting }, reset } = useForm<NewTransactionFormInputs>({
     resolver: zodResolver(newTransactionFormSchena),
     defaultValues: {
       type: 'entrada'
     }
   })
 
-  function handleSubmitTransaction(data: NewTransactionFormInputs) {
-    console.log(data);
+  async function handleSubmitTransaction(data: NewTransactionFormInputs) {
+    const { description, category, price, type } = data;
+    await createTransaction({ description, category, price, type })
+    reset();
   }
   return (
     <Dialog.Portal>
@@ -57,12 +63,7 @@ export function NewTransactionModal() {
               )
             }}
           />
-
-
-
           <button type="submit" disabled={isSubmitting}>Cadastrar</button>
-
-
         </form>
 
       </Content>

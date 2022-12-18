@@ -15,6 +15,38 @@
       "category": "Lazer",
       "price": 112,
       "createdAt": "2022-12-05T01:34:33.563Z"
+    },
+    {
+      "description": "dev app",
+      "category": "venda",
+      "price": 10000,
+      "type": "entrada",
+      "createAt": "2022-12-16T19:17:06.248Z",
+      "id": 3
+    },
+    {
+      "description": "teste",
+      "category": "teste",
+      "price": 1,
+      "type": "saida",
+      "createAt": "2022-12-16T19:18:48.601Z",
+      "id": 4
+    },
+    {
+      "description": "teste 32",
+      "category": "teste",
+      "price": 123,
+      "type": "entrada",
+      "createAt": "2022-12-16T19:19:49.744Z",
+      "id": 5
+    },
+    {
+      "description": "saida",
+      "category": "100",
+      "price": 150,
+      "type": "entrada",
+      "createAt": "2022-12-16T19:44:17.072Z",
+      "id": 6
     }
   ]
 }
